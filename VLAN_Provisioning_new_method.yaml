@@ -1,0 +1,29 @@
+- defaultTab: summary
+  description: ''
+  executionEnabled: true
+  id: 01c09f10-70dc-4d4a-906a-8061f8b1bcbc
+  loglevel: INFO
+  name: VLAN_Provisioning_new_method
+  nodeFilterEditable: false
+  nodefilters:
+    dispatch:
+      excludePrecedence: true
+      keepgoing: false
+      rankOrder: ascending
+      successOnEmptyNodeFilter: false
+      threadcount: '1'
+    filter: 'tags: ios'
+  nodesSelectedByDefault: true
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        ansible-base-dir-path: /etc/ansible
+        ansible-become: 'false'
+        ansible-playbook: /etc/ansible/new_vlan_method2.yml
+      nodeStep: true
+      type: com.batix.rundeck.plugins.AnsiblePlaybookWorflowNodeStep
+    keepgoing: false
+    strategy: node-first
+  uuid: 01c09f10-70dc-4d4a-906a-8061f8b1bcbc
+
