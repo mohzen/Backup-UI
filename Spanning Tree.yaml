@@ -1,0 +1,29 @@
+- defaultTab: summary
+  description: ''
+  executionEnabled: true
+  id: 172a313e-f369-4fc0-9170-0449daf61100
+  loglevel: INFO
+  name: Spanning Tree
+  nodeFilterEditable: false
+  nodefilters:
+    dispatch:
+      excludePrecedence: true
+      keepgoing: false
+      rankOrder: ascending
+      successOnEmptyNodeFilter: false
+      threadcount: '1'
+    filter: 'tags: ios'
+  nodesSelectedByDefault: true
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        ansible-base-dir-path: /etc/ansible
+        ansible-become: 'false'
+        ansible-playbook: /etc/ansible/Spanning-Tree.yml
+      nodeStep: true
+      type: com.batix.rundeck.plugins.AnsiblePlaybookWorflowNodeStep
+    keepgoing: false
+    strategy: node-first
+  uuid: 172a313e-f369-4fc0-9170-0449daf61100
+
