@@ -1,0 +1,29 @@
+- defaultTab: summary
+  description: Backup-Config
+  executionEnabled: true
+  id: 1c850a9c-ec4d-4277-bc88-3fc280e91471
+  loglevel: INFO
+  name: Backup Config
+  nodeFilterEditable: false
+  nodefilters:
+    dispatch:
+      excludePrecedence: true
+      keepgoing: true
+      rankOrder: ascending
+      successOnEmptyNodeFilter: false
+      threadcount: '1'
+    filter: 'tags: ios name: 192.168.1.254'
+  nodesSelectedByDefault: true
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        ansible-base-dir-path: /etc/ansible/APB
+        ansible-become: 'false'
+        ansible-playbook: /etc/ansible/APB/backup.yml
+      nodeStep: true
+      type: com.batix.rundeck.plugins.AnsiblePlaybookWorflowNodeStep
+    keepgoing: false
+    strategy: node-first
+  uuid: 1c850a9c-ec4d-4277-bc88-3fc280e91471
+
